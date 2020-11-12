@@ -1,0 +1,233 @@
+@import "lib/vars";
+@import "lib/reboot";
+@import "lib/keyframes";
+@import "lib/fontface";
+
+@import "lib/colors";
+@import "lib/typo";
+@import "lib/utils";
+
+@import "partials/layout";
+@import "partials/modals";
+
+$h1_size: 36px;
+$h1_line_height: 49px;
+$pink_color: #FF7CD3;
+$green_color: #53FFCB;
+$blue_color: #85948E;
+$black_color: #6A6A6A;
+$gray_color: #85948E;
+$icon_size: 32px;
+
+* {
+    &:not(a) {
+        border: 1px solid pink;
+    }
+}
+
+#app .full_window {
+    padding: unset;
+}
+
+@keyframes rotating {
+    0%  { transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
+}
+
+.Opponent img {
+    animation: rotating 4s linear infinite;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600; // semibold
+    font-style: normal;
+}
+
+h1 {
+    font-size: $h1_size;
+    line-height: $h1_line_height;
+    color: $black_color;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 38px;
+    color: $gray_color;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 27px;
+    color: $black_color;
+}
+
+p {
+    font-weight: 400; // normal
+    font-style: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+button {
+    width: 84.61%;
+    height: 51px;
+    align-items: center;
+    border-radius: 12px;
+    a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600; // semibold
+        color: black;
+    }
+}
+button.primary {
+    background-color: $pink_color;
+}
+button.secondary {
+    background-color: white;
+    border: 2px solid black;
+}
+.slider {
+    margin-top: auto;
+    margin-bottom: auto;
+    .characters {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding: unset;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    li {
+        font-size: $icon_size;
+    }
+}
+
+.player_score {
+    color: $pink_color;
+    font-size: $h1_size;
+    font-weight: 600; // semibold
+}
+
+.table_container {
+    .lboard_table {
+        margin: auto;
+        width: 84.61%;
+        .lboard_item {
+            line-height: 27px;
+            .lboard_number, .lboard_item_name {
+                text-align: left;
+            }
+            .lboard_item_p {
+                text-align: right;
+            }
+            .leader {
+                color: $green_color;
+                font-weight: 600; // semibold
+                font-size: 20px;
+            }
+            .you {
+                color: $pink_color;
+            }
+        }
+    }
+}
+
+.table_container, .settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .setting_menu {
+        margin: auto;
+        width: 84.61%;
+        .setting_item {
+            line-height: 10vh;
+            .setting_icon, .setting_toggle {
+                text-align: right;
+                font-size: $icon_size;
+                .mdi-toggle-switch-outline {
+                    color: $green_color;
+                }
+            }
+            .setting_name {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.ui {
+    font-size: 20px;
+    font-weight: 600; // semibold
+    .lifes {
+        color: $pink_color;
+    }
+    .score {
+        color: $green_color;
+    }
+    .pause {
+        color: $black_color;
+    }
+    .lifes, .score, .pause {
+        padding: 5%;
+    }
+}
+
+.holder {
+    text-align: center;
+}
+
+.cta button {
+    width: 44.61%;
+}
+
+#menu_page,
+#settings_page,
+#leaderboard_page {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    header {
+        width: 100%;
+        padding-top: $h1_size + $h1_line_height;
+    }
+
+    .hscore {
+        width: 100%;
+    }
+
+    .main,
+    .lboard {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+#main_page {
+    display: flex;
+    flex-direction: column;
+
+    .ui {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .game {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}

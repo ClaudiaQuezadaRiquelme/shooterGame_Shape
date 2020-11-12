@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#fafafa" />
+
+    <meta name="description" content="Juego de naves y disparos">
+    <meta name="apple-mobile-web-app-title" content="Shaped">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="assets/img/icons/char_01_192.png">
+    <meta name="apple-mofle-web-app-capable" content="yes">
+
+    <title>Shooter Game</title>
+    <link rel="shortcut icon" href="assets/img/characters/char_01.png" type="image/x-icon">
+
+    <!-- sass compiled -->
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+    <link href="assets/css/main.css.map" />
+
+    <!-- material icons -->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialdesignicons.css" />
+    <link href="assets/css/materialdesignicons.css.map" />
+
+    <!-- swiperjs -->
+    <link rel="stylesheet" href="app/libs/swiper.css" />
+
+    <!-- manifest -->
+    <link rel="manifest" href="app/manifest.json">
+</head>
+
+<body>
+    <div id="app" class="app">
+
+
+
+
+
+
+        <!-- 
+            SPLASH PAGE
+            
+            Información sobre splash page.
+
+            -->
+        <section id="splash_page" class="full_window">
+            <!-- Splash template -->
+            <h1>Splash page</h1>
+            <p>Me animo automáticamente, quieres ver cómo. en app/Animations.js</p>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            MAIN PAGE
+            
+            Página donde está alojado el juego
+            
+            -->
+        <section id="main_page" class="full_window">
+            <!-- Main page UI -->
+            <div class="ui">
+                <div class="lifes">
+                    <span class="amount">3</span>
+                    <span class="icon">
+                        <span class="mdi mdi-cards-heart"></span>
+                    </span>
+                </div>
+                <div class="score">
+                    <span class="amount">3</span>
+                    <span class="icon">
+                        <span class="mdi mdi-star"></span>
+                    </span>
+                </div>
+                <div class="pause">
+                    <a href="#modal_pause_window" class="pause_btn" id="pause" navigation-type="modal" animation-type="pause_modal">
+                        <span class="mdi mdi-pause-circle-outline"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Main page Juego!! -->
+            <div class="game">
+                <!-- Here comes the gameeee!! -->
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            VENTANA MODAL PAUSA
+            
+            Ventana modal de pausa
+            
+            -->
+        <section id="modal_pause_window" class="modal_window modal_light">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal settings -->
+                <div class="settings">
+                    <table class="setting_menu">
+                        <tr class="setting setting_item">
+                            <th class="setting_icon"><span class="mdi mdi-volume-high"></span></th>
+                            <th class="setting_name setting_label">Background music</th>
+                            <th class="setting_toggle"><span class="mdi mdi-toggle-switch-off-outline"></span></th>
+                        </tr>
+                        <tr class="setting setting_item">
+                            <th class="setting_icon"><span class="mdi mdi-music-note"></span></th>
+                            <th class="setting_name setting_label">Action Sounds</th>
+                            <th class="setting_toggle"><span class="mdi mdi-toggle-switch-outline"></span></th>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- modal ctas -->
+                <button class="primary"><a href="#main_page" navigation-type="modal" animation-type="resume_modal">Back to game</a></button>
+                <button class="secondary"><a href="#modal_confirm" navigation-type="modal" animation-type="confirm_modal_in">Quit game</a></button>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            VENTANA MODAL CONFIRMACIÓN
+            
+            Ventana modal de confirmación
+            
+            -->
+        <section id="modal_confirm" class="modal_window">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal message -->
+                <div class="message">
+                    If you quit the game, you'll lose all your points.<br />Are
+                    you sure?
+                </div>
+
+                <!-- modal cta -->
+                <div class="cta">
+                    <button class="primary"><a href="#menu_page" navigation-type="animation" animation-type="game_out">Quit</a></button>
+                    <button class="secondary"><a href="#main_page" navigation-type="modal" animation-type="confirm_modal_out">Cancelar</a></button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div id="swiper_page" class="swiper_section full_window">
+
+            <div class="swiper-wrapper">
+
+            <!-- 
+                PÁGINA DE SETTINGS
+                
+                Página para modificar settings
+                
+                -->
+            <section id="settings_page" class="swiper_item swiper-slide">
+                <header class="header">
+                    <h2>Settings</h2>
+                </header>
+
+                <div class="main table_container">                    
+                    <table class="setting_menu">
+                        <tr class="setting_item">
+                            <th class="setting_icon"><span class="mdi mdi-volume-high"></span></th>
+                            <th class="setting_name">Background music</th>
+                            <th class="setting_toggle"><span class="mdi mdi-toggle-switch-off-outline"></span></th>
+                        </tr>
+                        <tr class="setting_item">
+                            <th class="setting_icon"><span class="mdi mdi-music-note"></span></th>
+                            <th class="setting_name">Action Sounds</th>
+                            <th class="setting_toggle"><span class="mdi mdi-toggle-switch-outline"></span></th>
+                        </tr>
+                    </table>
+                </div>
+
+                <footer class="footer">
+                    <button class="primary" id="btnInstall" aria-label="Install" hidden>Instalar app</button>
+                    <button class="secondary"><a href="#menu_page" navigation-type="swipe">Back</a></button>
+                </footer>
+            </section>
+
+
+
+
+
+
+            <!-- 
+                MENU PAGE
+                
+                Página de menu
+                
+                -->
+            <section id="menu_page" class="swiper_item swiper-slide">
+                <header class="header">
+                    <h1>Shaped Game</h1>
+                    <h2>get the shape!</h2>
+                </header>
+                <div class="slider">
+                    <div class="characters">
+                        <img src="assets/img/characters/char_03.png" alt="character boss">
+                        <img src="assets/img/characters/char_02.png" alt="character player">
+                        <img src="assets/img/characters/char_01.png" alt="character enemy">
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <button class="primary"><a href="#main_page" navigation-type="animation" animation-type="menu_to_game">Get Start</a></button>
+                    <div class="foot_navigation">
+                        <ul class="inline_menu">
+                            <li>
+                                <a href="#settings_page" navigation-type="swipe">
+                                    <span class="mdi mdi-settings"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#leaderboard_page" navigation-type="swipe">
+                                    <span class="mdi mdi-signal"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 
+                PÁGINA DE HIGH SCORES
+                
+                Página para meter high scores con PWA
+                
+                -->
+            <section id="leaderboard_page" class="swiper_item swiper-slide">
+                <!-- Leaderboard HighScore -->
+                <section class="hscore">
+                    <header class="header">
+                        <h2>High Score</h2>
+                    </header>
+                    <div class="main player_score">
+                        2304
+                    </div>
+                </section>
+
+                <!-- Leaderboard  -->
+                <section class="lboard">
+                    <header class="header">
+                        <h2>Leaderboard</h2>
+                    </header>
+                    <div class="main table_container">
+                        <table class="lboard_table">
+                            <!-- Para futuras mejoras, hacer tabla dinámica. Así no es muy escalable -->
+                            <tr class="lboard_item">
+                                <th class="lboard_number">1</th>
+                                <th class="lboard_item_name leader">Theresa Mccoy</th>
+                                <th class="lboard_item_p">9690</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">2</th>
+                                <th class="lboard_item_name">Morris Mckinney</th>
+                                <th class="lboard_item_p">8264</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">3</th>
+                                <th class="lboard_item_name">Annete Cooper</th>
+                                <th class="lboard_item_p">8049</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">4</th>
+                                <th class="lboard_item_name">Eleanor Williamson</th>
+                                <th class="lboard_item_p">6710</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">5</th>
+                                <th class="lboard_item_name">Evan Simmons</th>
+                                <th class="lboard_item_p">6166</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">6</th>
+                                <th class="lboard_item_name">Lee Alexander</th>
+                                <th class="lboard_item_p">5477</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">7</th>
+                                <th class="lboard_item_name">Ann Robertson</th>
+                                <th class="lboard_item_p">5457</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">8</th>
+                                <th class="lboard_item_name">Bessie Cooper</th>
+                                <th class="lboard_item_p">3208</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">9</th>
+                                <th class="lboard_item_name you">You</th>
+                                <th class="lboard_item_p">2304</th>
+                            </tr>
+                            <tr class="lboard_item">
+                                <th class="lboard_number">10</th>
+                                <th class="lboard_item_name">Debra Cooper</th>
+                                <th class="lboard_item_p">304</th>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Leaderboard back to menu -->
+                <footer class="footer">
+                    <button class="secondary"><a href="#menu_page" navigation-type="swipe">Back</a></button>
+                </footer>
+            </section>
+
+            </div> <!-- /swipe_wrapper-->
+        </div> <!-- /swipe_section-->
+
+
+
+
+
+
+
+        <!-- 
+            SPINNER
+            
+            Por si se necesita a la hora de hacer un spinner de carga
+            
+            -->
+        <section id="modal_loading_spinner" class="spinner_window">
+            <!-- Spinner -->
+            <span class="spinner">
+                <div class="mdi mdi-loading mdi-spin"></div>
+            </span>
+        </section>
+
+
+    </div>
+
+    <!-- libs -->
+    <script src="app/libs/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="app/libs/anime.min.js" type="text/javascript"></script>
+
+    <!-- game -->
+    <script src="app/Game/Game.js" type="text/javascript"></script>
+    <script src="app/Game/Entity.js" type="text/javascript"></script>
+    <script src="app/Game/Character.js" type="text/javascript"></script>
+    <script src="app/Game/Player.js" type="text/javascript"></script>
+    <script src="app/Game/Opponent.js" type="text/javascript"></script>
+    <script src="app/Game/Shot.js" type="text/javascript"></script>
+    <script src="app/Game/utils.js" type="text/javascript"></script>
+
+    <!-- ui stuff -->
+    <script src="app/Animations.js" type="text/javascript"></script>
+    <script src="app/Navigation.js" type="text/javascript"></script>
+    <script src="app/UI.js" type="text/javascript"></script>
+
+    <!-- inits -->
+    <script src="app/main.js" type="text/javascript"></script>
+
+    <!-- install app -->
+    <script src="app/install.js"></script>
+
+    <!-- service worker -->
+    <script>
+        // Comprobamos si la funcionalidad existe en el caso de que un navegador antiguo acceda.
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then( (reg) => {
+                    console.log("Service Worker OK ", reg);
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>
